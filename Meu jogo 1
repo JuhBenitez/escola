@@ -1,0 +1,105 @@
+//variáveis ​​da bolinha
+2
+seja xBolinha = 100 ;   
+3
+seja  yBolinha  =  200 ;
+4
+seja  diâmetro  =  20 ;
+5
+deixe  raio  =  diametro  /  2 ;
+6
+​
+7
+//variáveis ​​do oponente
+8
+deixe  xRaqueteOponente  =  585 ;
+9
+deixe  yRaqueteOponente  =  150 ;
+10
+​
+11
+//velocidade da bolinha
+12
+deixe  velocidadeXBolinha  =  6 ;
+13
+deixe  velocidadeYBolinha  =  6 ;
+14
+​
+15
+//variáveis ​​da raquete
+16
+seja  xRaquete  =  5 ;
+17
+seja  yRaquete  =  150 ;
+18
+deixe  raqueteComprimento  =  10 ;
+19
+deixe  raqueteAltura  =  90 ;
+20
+​
+21
+//placar do jogo
+22
+deixe  meusPontos  =  0 ;
+23
+deixe  pontosDoOponente  =  0 ;
+24
+​
+25
+​
+26
+//filhos do jogo
+27
+deixe  raquetada ;
+28
+deixe  ponto ;
+29
+deixe  trilha ;
+30
+​
+31
+deixe  colidiu  =  falso ;
+32
+​
+33
+ configuração de função () {
+34
+  criarCanvas ( 600 , 400 );
+35
+    trilha . laço ();
+36
+}
+37
+​
+38
+função  desenhar () {
+39
+    fundo ( 0 );
+40
+    mostraBolinha ();
+41
+    movimentosBolinha ();
+42
+    verificaColisaoBorda ();
+43
+    mostraRaquete ( xRaquete , yRaquete );
+44
+    movimentosMinhaRaquete ();
+45
+    verificaColisaoRaquete ( xRaquete , yRaquete );
+46
+    verificaColisaoRaquete ( xRaqueteOponente , yRaqueteOponente );
+47
+    mostraRaquete ( xRaqueteOponente , yRaqueteOponente );
+48
+    movimentosRaqueteOponente ();
+49
+    incluiPlacar ()
+50
+    marcaPonto ();
+51
+}
+52
+function  mostraBolinha () {
+53
+  círculo ( xBolinha , yBolinha , diametro );
